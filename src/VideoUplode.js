@@ -19,7 +19,7 @@ const VideoUpload = () => {
     formData.append('description', description);
 
     try {
-      const response = await axios.post('http://localhost:4000/upload', formData, {
+      const response = await axios.post('https://video-store-show-backend.onrender.com/upload', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -33,7 +33,7 @@ const VideoUpload = () => {
 
   const fetchVideos = async () => {
     try {
-      const response = await axios.get('http://localhost:4000/videos');
+      const response = await axios.get('https://video-store-show-backend.onrender.com/videos');
       setVideos(response.data);
     } catch (error) {
       console.error('Error fetching videos:', error);
@@ -71,7 +71,7 @@ const VideoUpload = () => {
             <h3>{video.metadata?.title || 'No title'}</h3>
             <p>{video.metadata?.description || 'No description'}</p>
             <video width="320" height="240" controls>
-              <source src={`http://localhost:4000/videos/${video._id}`} type="video/mp4" />
+              <source src={`https://video-store-show-backend.onrender.com/${video._id}`} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </li>

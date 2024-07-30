@@ -71,7 +71,7 @@ const VideoUpload = () => {
             <h3>{video.metadata?.title || 'No title'}</h3>
             <p>{video.metadata?.description || 'No description'}</p>
             <video width="320" height="240" controls>
-              <source src={`https://video-store-show-backend.onrender.com/${video._id}`} type="video/mp4" />
+              <source src={`https://video-store-show-backend.onrender.com/videos/${video._id}`} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
           </li>
